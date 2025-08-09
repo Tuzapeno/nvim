@@ -38,6 +38,13 @@ return {
         -- ======================= PICKER =======================
 
         {
+            "<leader>uC",
+            function()
+                require("snacks").picker.colorschemes()
+            end,
+            desc = "Colorschemes"
+        },
+        {
             "<leader><space>",
             function()
                 require("snacks").picker.smart()
