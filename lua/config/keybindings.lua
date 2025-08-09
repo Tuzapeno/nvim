@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 
+-- Cancel search highlighting
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
+
 -- ================= NAVIGATION =================
 
 -- Navigate in insert mode
