@@ -4,4 +4,9 @@ return {
     build = ":Cord update",
     lazy = true,
     event = "VeryLazy",
+    opts = {
+        display = {
+            theme = "catppuccin",
+        }
+    }
 }
