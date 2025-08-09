@@ -9,9 +9,15 @@ vim.keymap.set('n', '<leader>bc', '<Cmd>BufferLinePickClose<CR>', { desc = "Pick
 vim.keymap.set('n', '<leader>bp', '<Cmd>BufferLinePick<CR>', { desc = "Pick buffer" })
 
 -- Move buffer
-vim.keymap.set('n', '<leader>bm', '<Cmd>BufferLineMoveNext<CR>', { desc = "Move buffer next" })
-vim.keymap.set('n', '<leader>bM', '<Cmd>BufferLineMovePrev<CR>', { desc = "Move buffer prev" })
+vim.keymap.set('n', '<leader>bm', '<Cmd>BufferLineMoveNext<CR>', { desc = "Move tab next" })
+vim.keymap.set('n', '<leader>bM', '<Cmd>BufferLineMovePrev<CR>', { desc = "Move tab prev" })
 
+-- Close buffer
+vim.keymap.set('n', '<leader>bd', '<Cmd>BufferLineCloseRight<CR>', { desc = "Close tabs right" })
+vim.keymap.set('n', '<leader>bD', '<Cmd>BufferLineCloseLeft<CR>', { desc = "Close tabs left" })
+
+-- Close all buffers
+vim.keymap.set('n', '<leader>ba', '<Cmd>BufferLineCloseOthers<CR>', { desc = "Close all other tabs" })
 
 return {
     'akinsho/bufferline.nvim',
