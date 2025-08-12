@@ -1,7 +1,7 @@
 return {
     -- Using only for the cmdline
     "folke/noice.nvim",
-    event = "VeryLazy",
+    event = "CmdlineEnter",
     opts = {
         messages = { enabled = false },
         popupmenu = { enabled = false },
