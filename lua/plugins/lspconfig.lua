@@ -32,15 +32,28 @@ return {
     config = function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         vim.lsp.config("*", { capabilities = capabilities })
+
+        -- Lua Language Server Configuration
         vim.lsp.config("lua_ls", {
             settings = {
                 Lua = {
+                    runtime = {
+                        version = "LuaJIT", -- Use LuaJIT for Neovim
+                    },
                     diagnostics = {
                         globals = { "vim" }, -- Recognize 'vim' as a global variable
+                    },
+                    workspace = {
+                        library = vim.api.nvim_get_runtime_file("", true), -- Include Neovim runtime files
+                        checkThirdParty = false,                           -- Disable third-party checks
+                    },
+                    telemetry = {
+                        enable = false, -- Disable telemetry
                     },
                 },
             },
         })
+
         vim.lsp.enable(servers)
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
