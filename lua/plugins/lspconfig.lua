@@ -1,4 +1,4 @@
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     local map = function(mode, lhs, rhs, desc)
         vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true, desc = desc })
     end
@@ -32,6 +32,15 @@ return {
     config = function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         vim.lsp.config("*", { capabilities = capabilities })
+        vim.lsp.config("lua_ls", {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }, -- Recognize 'vim' as a global variable
+                    },
+                },
+            },
+        })
         vim.lsp.enable(servers)
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
