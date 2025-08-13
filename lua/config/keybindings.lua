@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 -- Cancel search highlighting
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
+map('n', '<Esc>', '<cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
 
 -- ================= NAVIGATION =================
 
@@ -33,11 +33,14 @@ map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "move selected lines u
 
 -- ================== FILES ==================
 
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
-map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
+-- Save file
+map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save current file" })
+
+-- Copy whole file to clipboard
+map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "Copy entire file to clipboard" })
 
 -- Copy selection to clipboard
-map({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to clipboard" })
+map({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy selected text to clipboard" })
 
 -- Deletes without overwriting default register
-map({ "n", "v" }, "<leader>d", '"_d', { desc = "Deletes without overwriting default register" })
+map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without overwriting clipboard" })
