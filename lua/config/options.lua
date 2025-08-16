@@ -10,7 +10,9 @@ local icons = {
     },
 }
 
-vim.cmd('colorscheme gruvbox')
+if not vim.g.vscode then
+    vim.cmd('colorscheme gruvbox')
+end
 
 -------------------------------------- options ------------------------------------------
 o.laststatus = 3
