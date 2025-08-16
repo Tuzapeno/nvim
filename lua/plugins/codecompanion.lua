@@ -9,6 +9,13 @@ return {
             strategies = {
                 chat = {
                     adapter = "copilot",
+                    tools = {
+                        opts = {
+                            default_tools = {
+                                "files"
+                            }
+                        }
+                    }
                 },
             },
 
