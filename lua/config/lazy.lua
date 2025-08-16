@@ -27,6 +27,7 @@ specs = {}
 if vim.g.vscode then
     table.insert(specs, { import = "vsc" })
 else
+    table.insert(specs, { import = "vsc" })
     table.insert(specs, { import = "plugins" })
 end
 
